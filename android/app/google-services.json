@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "900335431865",
+    "firebase_url": "https://health-sphere-55222-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "health-sphere-55222",
+    "storage_bucket": "health-sphere-55222.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:900335431865:android:a92f94a6617c12ca57eb68",
+        "android_client_info": {
+          "package_name": "com.example.demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYV10cK2UK7IRXAjx1C4Wra9QFqJk2K5A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

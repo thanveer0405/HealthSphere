@@ -23,7 +23,6 @@ class DoctorPage extends StatelessWidget {
     if (confirm ?? false) {
       final box = Hive.box('authBox');
       await box.clear();
-      // ignore: use_build_context_synchronously
       Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_) => const LoginPage()), (_) => false);
     }
   }

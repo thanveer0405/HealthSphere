@@ -11,7 +11,7 @@ class PatientPage extends StatefulWidget {
 class _PatientPageState extends State<PatientPage> {
   final box = Hive.box('authBox');
   late final dynamic espId;
-  late final ref = FirebaseDatabase.instance.ref('devices/$espId');
+  late final ref = FirebaseDatabase.instance.ref('devices/$espId'); // change dynamically later
 
   @override
   void initState() {

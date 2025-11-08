@@ -14,8 +14,10 @@ android {
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
+        // ✅ Enable Java 11 features and desugaring support
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+        isCoreLibraryDesugaringEnabled = true
     }
 
     kotlinOptions {
@@ -23,10 +25,8 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        // ✅ App basic config
         applicationId = "com.example.demo"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
@@ -34,14 +34,28 @@ android {
     }
 
     buildTypes {
-        release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
+        getByName("release") {
+            // ✅ Signing config for release
             signingConfig = signingConfigs.getByName("debug")
         }
     }
 }
 
 flutter {
+    // ✅ Link Flutter source directory
     source = "../.."
+}
+
+dependencies {
+    // ✅ Required for Java 8+ APIs like java.time, streams, etc.
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
+
+    // ✅ Kotlin standard library
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
+    // ✅ Firebase (if used)
+    implementation(platform("com.google.firebase:firebase-bom:33.3.0"))
+
+    // ✅ Flutter local notifications plugin dependency
+    implementation("androidx.core:core-ktx:1.13.1")
 }
